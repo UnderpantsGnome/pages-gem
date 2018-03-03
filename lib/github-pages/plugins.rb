@@ -9,7 +9,7 @@ module GitHubPages
       jekyll-commonmark-ghpages
       jekyll-gist
       jekyll-github-metadata
-      jekyll-paginate
+      jekyll-paginate-v2
       jekyll-relative-links
       jekyll-optional-front-matter
       jekyll-readme-index
@@ -24,7 +24,7 @@ module GitHubPages
       jekyll-feed
       jekyll-gist
       jekyll-github-metadata
-      jekyll-paginate
+      jekyll-paginate-v2
       jekyll-redirect-from
       jekyll-seo-tag
       jekyll-sitemap
