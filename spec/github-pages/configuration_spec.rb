@@ -58,6 +58,10 @@ describe(GitHubPages::Configuration) do
       expect(effective_config["testing"]).to eql("123")
     end
 
+    it "sets exclude directive" do
+      expect(effective_config["exclude"]).to include("CNAME")
+    end
+
     context "markdown processor" do
       context "with no markdown processor set" do
         it "defaults to kramdown" do
@@ -111,6 +115,17 @@ describe(GitHubPages::Configuration) do
           expect(site.theme).to_not be_nil
           expect(site.theme).to be_a(Jekyll::Theme)
           expect(site.theme.name).to eql("jekyll-theme-merlot")
+        end
+      end
+
+      context "with user-specified theme to be null" do
+        let(:site) do
+          config = configuration.merge("theme" => nil)
+          Jekyll::Site.new(config)
+        end
+
+        it "respects null" do
+          expect(site.theme).to be_nil
         end
       end
 
